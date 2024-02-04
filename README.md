@@ -2,10 +2,10 @@
 Use an audio analysis library to analyze audio sample folder and sort by similarities/differences
 
 Choose an Audio Analysis Library:
-Select an audio analysis library or tool that can extract features from audio files. One popular library is LibROSA for Python, which can be used to extract audio features.
+Select an audio analysis library or tool that can extract features from audio files. Using LibROSA as test case.
 
 Install Required Packages:
-Install the necessary packages. For LibROSA, you can install it using:
+Install the necessary packages. For LibROSA, pip install it using:
 pip install librosa
 
 Feature Extraction:
