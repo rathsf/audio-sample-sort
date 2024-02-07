@@ -22,11 +22,12 @@ for filename in os.listdir(audio_folder):
         # Store features and filename
         audio_data[filename] = file_features
 
-# Define your similarity metric function (e.g., Euclidean distance)
-def similarity(features1, features2):
-    # Implement your preferred distance metric here
-    # Example using Euclidean distance
-    return sum((a - b)**2 for a, b in zip(features1, features2))
+# Define a weighted similarity metric function: a weighted sum of their Euclidean distance and cosine similarity
+def weighted_similarity(features1, features2, weight_euclidean=0.5, weight_cosine=0.5):
+    euclidean_dist = similarity_euclidean(features1, features2)
+    cosine_sim = similarity_cosine(features1, features2)
+    return weight_euclidean * euclidean_dist + weight_cosine * cosine_sim
+
 
 # Organize files based on similarity
 clusters = {}
